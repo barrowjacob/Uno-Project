@@ -15,27 +15,33 @@ let players = [
 
 
 
-/* ===============BEGIN UNO PSEUDOCODE
-
-    -for loop to loop through each person for entirety of game
-        -for loop to issue out random cards to each person
-            -for loop as each player draws a card
-            -for loop as each player decides on card to play
-=================================== */
+// ============ begin DEAL =============== //
 
 function deal() {
-
     for (let i = 0; i < 4; i++) {
-        let randomNum = (Math.floor(Math.random() * 54 - 1) + 2);
-        player1Hand.unshift(randomNum);
-        randomNum = (Math.floor(Math.random() * 54 - 1) + 2);
-        player2Hand.unshift(randomNum);
-        randomNum = (Math.floor(Math.random() * 54 - 1) + 2);
-        player3Hand.unshift(randomNum);
-
+        var random = randomNum();
+        console.log(random);
+        player1Hand.unshift(random);
+        deck.splice(random, 1);
+        // console.log(player1Hand);
+        random = randomNum();
+        player2Hand.unshift(random);
+        deck.splice(random, 1);
+        random = randomNum();
+        deck.splice(random, 1);
+        player3Hand.unshift(random);
     }
 }
+
+// actual deal with function below //
 deal();
+
+// =============== begin first ROUND ============== //
+
+    carder = (Math.floor(Math.random() * 54 - 1) + 2);
+
+
+// check the players hands//
 console.log(player1Hand);
 console.log(player2Hand);
 console.log(player3Hand);
