@@ -60,13 +60,9 @@ function makeSandwichObjects(breads, fillings) {
 
         breads.forEach(function(bread, i) {
             var sandwichObject= {};
-
-            fillings.forEach(function(filling) {
                 sandwichObject.bread = bread;
                 sandwichObject.filling = fillings[i];
-                console.log(sandwichObject.filling)
-                });
-                 sandwichArray.push(sandwichObject);
+                sandwichArray.push(sandwichObject);
         });
 
     return sandwichArray;
