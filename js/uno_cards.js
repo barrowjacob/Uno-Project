@@ -530,15 +530,35 @@
             value: 12,
             color: "yellow"
         },
+        {
+            name: "wildCard",
+            value: 13,
+            color: "black"
+        },
+        {
+            name: "wildCard_also",
+            value: 13,
+            color: "black"
+        },
+        {
+            name: "wildDrawFour",
+            value: 14,
+            color: "black"
+        },
+        {
+            name: "wildDrawFour_also",
+            value: 14,
+            color: "black"
+        }
 
     ];
 
     /* =============  RNG ============= */
 
-    let randomNum = function() {
-       let i = (Math.floor(Math.random() * 54 - 1) + 2);
-        return deck[i];
-    };
+    // let randomNum = function() {
+    //    let i = (Math.floor(Math.random() * 54 - 1) + 2);
+    //     return deck[i];
+    // };
     // switch (randomNum) {
     //         case 1:
     //             card.value = 0;
