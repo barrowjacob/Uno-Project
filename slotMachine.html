@@ -65,10 +65,10 @@
 <script>
     var counter = 3000;
     var coin = new Audio("assets/smb_coin.wav");
-    var oneUp = new Audio("Assets/smb_1-up.wav");
-    var over9k = new Audio("Assets/over9000.swf.mp3");
-    var loss = new Audio("Assets/smb_bump.wav");
-    var gameover = new Audio("Assets/smb_gameover.wav");
+    var oneUp = new Audio("assets/smb_1-up.wav");
+    var over9k = new Audio("assets/over9000.swf.mp3");
+    var loss = new Audio("assets/smb_bump.wav");
+    var gameover = new Audio("assets/smb_gameover.wav");
 
 
 
@@ -78,7 +78,7 @@
 
     function spin() {
         if (counter > 0) {
-            counts(0);
+            counts(-250);
             var first = Math.floor((Math.random() * 9) + 1);
             var second = Math.floor((Math.random() * 9) + 1);
             var third = Math.floor((Math.random() * 9) + 1);
@@ -87,7 +87,7 @@
             document.getElementById('second').innerHTML = second;
             document.getElementById('third').innerHTML = third;
 
-            if (first === second && second === third && third === first) {
+            if (first === second && first === third) {
                 counter += 2000;
                 document.getElementById("messages").innerText = "2000 Jackpot!!";
                 oneUp.play();
