@@ -7,7 +7,10 @@
 
 </head>
 <body>
-<div id="header"></div>
+<div id="header">
+    <h1> Codeup Slot Machine</h1>
+    <p> Press "Play" to spin!<br> Costs 250 credits to spin<br>3 of a kind is a 2000 point Jackpot!<br>2 of a kind is 1000 points <br> Lose 500 on a bust :(</p>
+</div>
 <div id="reels">
     <ul id="reelSet">
         <li id="first">X</li>
@@ -32,9 +35,8 @@
 
 
 <style>
-    root {
+    * {
         text-align: center;
-        margin: auto;
     }
 
     #reelSet {
@@ -60,11 +62,16 @@
     #controls {
         display: flex;
     }
-
+#header {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
 </style>
 
 <script>
-    var counter = 500;
+    var counter = 3000;
     var coin = new Audio("assets/smb_coin.wav");
     var oneUp = new Audio("assets/smb_1-up.wav");
     var over9k = new Audio("assets/over9000.swf.mp3");
