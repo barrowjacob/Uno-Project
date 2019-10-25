@@ -1,6 +1,8 @@
 
 //****************************************************************//
     // This comes David's bonus exercises -- MEDIUM DIFFICULTY //
+
+    // https://java.codeup.com/extra-exercises/javascript/objects/
 //****************************************************************//
 
 var salesReport = {
@@ -100,6 +102,15 @@ var salesReport = {
 };
 
 //********************************************//
-// This is from:  //
+// This is from edabit: (simple)
+// https://edabit.com/challenge/i6YqzHcSiPiEQKjeX //
 //********************************************//
+
+function maximumScore(tileHand) {
+    var total = 0;
+    for (var i = 0; i< tileHand.length; i++) {
+        total += tileHand[i].score;
+    }
+    return total;
+}
 
