@@ -31,12 +31,14 @@ function sizeChange() {
         var randomColor = Math.floor(Math.random() * 16777215).toString(16);
         var randomNumber = Math.floor(Math.random() * 45) + 10;
         array[i].style.fontSize = randomNumber + "px";
-        array[i].style.color = "#" + randomColor;
-        console.log("Changing size")
+        array[i].style.backgroundColor= "#" + randomColor;
+        array[i].style.color = "#" + randomColor.split("").reverse().join("");
+        console.log(randomColor);
+        console.log(randomColor.split("").reverse())
     }
 }
 
-setInterval(sizeChange, 500);
+setInterval(sizeChange, 300);
 var array = [d1, d2, d3, d4, d5, d6, d7, d8, d9, d10];
 
 
