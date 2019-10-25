@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <title>Slot Machine WIP</title>
     <script src="https://kit.fontawesome.com/990d7059ea.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/slotMachine.css">
+    <script src="js/slotMachine.js"></script>
 
 </head>
 <body>
 <div id="header">
     <h1> Codeup Slot Machine</h1>
-    <p> Press "Play" to spin!<br> Costs 250 credits to spin<br>3 of a kind is a 2000 point Jackpot!<br>2 of a kind is 1000 points <br> Lose 500 on a bust :(</p>
+    <p id="instructions"> Press "Play" to spin!<br> Costs 250 credits to spin<br>3 of a kind is a 2000 point
+        Jackpot!<br>2 of a kind is 1000 points <br> Lose 500 on a bust :(</p>
 </div>
 <div id="reels">
     <ul id="reelSet">
@@ -34,99 +37,5 @@
 </div>
 
 
-<style>
-    * {
-        text-align: center;
-    }
-
-    #reelSet {
-        display: flex;
-        justify-content: space-evenly;
-        font-size: 4em;
-        list-style-type: none;
-    }
-
-    #messagesUl {
-        display: flex;
-        align-content: center;
-        justify-content: space-evenly;
-        font-size: 2em;
-        list-style-type: none;
-    }
-
-    #spin {
-        font-size: 2em;
-        margin: auto;
-    }
-
-    #controls {
-        display: flex;
-    }
-#header {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-}
-</style>
-
-<script>
-    var counter = 3000;
-    var coin = new Audio("assets/smb_coin.wav");
-    var oneUp = new Audio("assets/smb_1-up.wav");
-    var over9k = new Audio("assets/over9000.swf.mp3");
-    var loss = new Audio("assets/smb_bump.wav");
-    var gameover = new Audio("assets/smb_gameover.wav");
-
-
-    function write_message($message) {
-        document.getElementById('messages').innerHTML = $message;
-    }
-
-    function spin() {
-        if (counter > 0) {
-            counts(-250);
-            var first = Math.floor((Math.random() * 9) + 1);
-            var second = Math.floor((Math.random() * 9) + 1);
-            var third = Math.floor((Math.random() * 9) + 1);
-
-            document.getElementById('first').innerHTML = first;
-            document.getElementById('second').innerHTML = second;
-            document.getElementById('third').innerHTML = third;
-
-            if (first === second && first === third) {
-                counter += 2000;
-                document.getElementById("messages").innerText = "2000 Jackpot!!";
-                oneUp.play();
-            } else if (first === second || second === third || third === first) {
-                counter += 1000;
-                document.getElementById("messages").innerText = "+1000 Points!!";
-                coin.play();
-            } else {
-                counter -= 500;
-                document.getElementById("messages").innerText = "-500 Womp Womp";
-                loss.play();
-            }
-        } else {
-            write_message("You're all out of credits!");
-            gameover.play();
-            document.getElementById('first').innerHTML = '<i class="fas fa-skull"></i>';
-            document.getElementById('second').innerHTML = '<i class="fas fa-skull"></i>';
-            document.getElementById('third').innerHTML = '<i class="fas fa-skull"></i>';
-            document.getElementById("counter").innerHTML = "0000";
-
-        }
-        if (counter > 9000) {
-            over9k.play()
-        }
-    }
-
-
-    function counts(value) {
-        count = counter + value;
-        document.getElementById("counter").innerHTML = count;
-    }
-
-</script>
 </body>
 </html>
