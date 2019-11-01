@@ -27,6 +27,8 @@
 <script type="text/javascript" src="js/jquery-2.2.4.js"></script>
 <script>
 
+    var downer = new Audio(src="assets/downer.mp3");
+
     $("#addify").click(function (a,b) {
         var a = $("#num1").val();
         var b = $("#num2").val();
@@ -56,6 +58,10 @@
         var b = $("#num2").val();
         a = parseFloat(a);
         b = parseFloat(b);
+        if (b === 0){
+            downer.play();
+            alert("You can't divide by 0, that's NaN!!!");
+        } else
         $("#output").html(a / b);
     });
 
