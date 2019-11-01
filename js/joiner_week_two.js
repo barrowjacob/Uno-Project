@@ -10,28 +10,7 @@ $(document).ready(function() {
 
 //Color and Size with Jquery
 
-    var d1 = document.getElementById("d1");
-
-    var d2 = document.getElementById("d2");
-
-    var d3 = document.getElementById("d3");
-
-    var d4 = document.getElementById("d4");
-
-    var d5 = document.getElementById("d5");
-
-    var d6 = document.getElementById("d6");
-
-    var d7 = document.getElementById("d7");
-
-    var d8 = document.getElementById("d8");
-
-    var d9 = document.getElementById("d9");
-
-    var d10 = document.getElementById("d10");
-
     var clicked = 0;
-
 
     $('#container').children().click(function() {
         var randomColor = Math.floor(Math.random() * 16777215).toString(16);
@@ -39,6 +18,8 @@ $(document).ready(function() {
         var randomNumber = Math.floor(Math.random() * 10);
         $(this).css("color", '#' + randomColor).css('font-size', randomSize).html(randomNumber)
     });
+
+    //Transversing the DOM using Jquery
 
     function randomize() {
         $('div').first().children().each(function () {
