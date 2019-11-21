@@ -16,7 +16,7 @@ var players = [
 ];
 
 
-var randomItem = function () {
+let randomItem = function () {
     return deck[Math.floor(Math.random() * deck.length)];
 };
 

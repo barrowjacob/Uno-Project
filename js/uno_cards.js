@@ -3,7 +3,7 @@
 
     /* ========THIS BEGINS THE DECK ASSIGNATION ========*/
 
-    var deck = [
+    let deck = [
         // =============== RED DECK ================= //
         {
             name: "redZero",
