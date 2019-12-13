@@ -15,6 +15,12 @@ var players = [
 ];
 
 
+
+///REAL TALK TIME, HERE:
+// START OVER FROM SCRATCH, AND USE REACT THIS TIME.
+// SOMETIMES IT'S BEST TO START FROM SCRATCH.
+// NOW IS THAT TIME.
+
 /********************************/
 //           FUNCTIONS          //
 /********************************/
@@ -59,7 +65,7 @@ function deal() {
 
 
 /******************************************/
-// ============ INTIAL DEAL =============== //
+// ============ INTIAL DEAL ============= //
 /******************************************/
 
 deal();
